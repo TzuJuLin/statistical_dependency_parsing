@@ -5,9 +5,6 @@ def read(file):
         print(line)
 
 
-# read('wsj_devconll06.pred')
-
-
 class Sentence:
     def __init__(self):
         self.id = []
@@ -75,8 +72,3 @@ class Corupus:
                 new_line += "\n"
                 new_f.write(new_line)
             new_f.write("\n")
-
-
-test = Corupus('/Users/lintzuru/Desktop/wsj_devconll06.pred')
-test.add_sentence()
-test.write_file()
