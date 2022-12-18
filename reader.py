@@ -72,3 +72,8 @@ class Corupus:
                 new_line += "\n"
                 new_f.write(new_line)
             new_f.write("\n")
+
+
+c = Corupus("/Users/lintzuru/Desktop/WS22:23/parsing/wsj_dev.conll06.pred")
+c.add_sentence()
+print(c.sentences[0].head)
