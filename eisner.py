@@ -17,16 +17,16 @@ def eisner(score):
     N = row
 
     # initialize
-    Or = np.zeros([N, N])
-    Ol = np.zeros([N, N])
-    Cr = np.zeros([N, N])
-    Cl = np.zeros([N, N])
+    Or = np.zeros([N, N], dtype=int)
+    Ol = np.zeros([N, N], dtype=int)
+    Cr = np.zeros([N, N], dtype=int)
+    Cl = np.zeros([N, N], dtype=int)
 
     # initialize back pointer tables
-    BOr = np.zeros([N, N])
-    BOl = np.zeros([N, N])
-    BCr = np.zeros([N, N])
-    BCl = np.zeros([N, N])
+    BOr = np.zeros([N, N], dtype=int)
+    BOl = np.zeros([N, N], dtype=int)
+    BCr = np.zeros([N, N], dtype=int)
+    BCl = np.zeros([N, N], dtype=int)
 
     for m in range(1, N):
         for s in range(0, N-m):
@@ -39,11 +39,9 @@ def eisner(score):
                 if Cl[s][q] + Cr[q+1][t] + score[t][s] < 0:
                     Or[s][t] = -10000
                     BOr[s][t] = 0
-            for q in range(s, t):
                 if Cl[s][q] + Cr[q+1][t] + score[s][t] >= Ol[s][t]:
                     Ol[s][t] = Cl[s][q] + Cr[q+1][t] + score[s][t]
                     BOl[s][t] = q
-            for q in range(s, t):
                 if Cr[s][q] + Or[q][t] >= Cr[s][t]:
                     Cr[s][t] = Cr[s][q] + Or[q][t]
                     BCr[s][t] = q
@@ -54,6 +52,7 @@ def eisner(score):
                 if Ol[s][k] + Cl[k][t] >= Cl[s][t]:
                     Cl[s][t] = Ol[s][k] + Cl[k][t]
                     BCl[s][t] = k
+
             # for intermediate check
             # print("m:" + str(m) + " s: " + str(s) + " t: " + str(t))
             # print(Or, Ol, Cr, Cl)

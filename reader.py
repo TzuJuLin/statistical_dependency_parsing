@@ -17,7 +17,7 @@ class Sentence:
         self.rel = []
 
 
-class Corupus:
+class Corpus:
 
     def __init__(self, path):
         self.path = path
@@ -74,6 +74,6 @@ class Corupus:
             new_f.write("\n")
 
 
-c = Corupus("/Users/lintzuru/Desktop/WS22:23/parsing/wsj_dev.conll06.pred")
-c.add_sentence()
-print(c.sentences[0].head)
+# c = Corpus("/Users/lintzuru/Desktop/WS22:23/parsing/test_feature")
+# c.add_sentence()
+# print(type(c.sentences))
