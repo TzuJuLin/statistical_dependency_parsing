@@ -1,3 +1,6 @@
+from itertools import permutations
+
+
 def read(file):
     f = open(file, 'r')
     i = 0
@@ -21,6 +24,11 @@ class Token:
 class Sentence:
     def __init__(self):
         self.tokens = []
+
+    def get_full_tree(self):
+        a = list(range(1, len(self.tokens)+1))
+        fully_connected_tree = list(permutations(a, 2))
+        return fully_connected_tree
 
 
 class Corpus:
@@ -95,5 +103,5 @@ class Corpus:
 c = Corpus("/Users/lintzuru/Desktop/WS22:23/parsing/test_feature")
 c.add_sentence()
 
-for token in c.sentences[0].tokens:
-    print(token.form)
+for sentence in c.sentences:
+    print(sentence.get_full_tree())
