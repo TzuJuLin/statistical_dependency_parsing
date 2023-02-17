@@ -1,11 +1,11 @@
 import numpy as np
 
 
-# score = np.array([[0.0, 9, 10, 9], [-10000, 0.0, 20, 3],
-#                  [-10000, 30, 0.0, 30], [-10000, 11, 0, 0.0]])
+score = np.array([[0.0, 9, 10, 9], [-10000, 0.0, 20, 3],
+                 [-10000, 30, 0.0, 30], [-10000, 11, 0, 0.0]])
 
-score = np.array([[0.0, 10, 5, 15], [-10000, 0.0, 20, 15],
-                 [-10000, 25, 0.0, 25], [-10000, 30, 10, 0.0]])
+# score = np.array([[0.0, 10, 5, 15], [-10000, 0.0, 20, 15],
+#                  [-10000, 25, 0.0, 25], [-10000, 30, 10, 0.0]])
 
 
 class Decoder:
@@ -117,5 +117,5 @@ class Decoder:
         return tree
 
 
-decoder = Decoder()
-print(decoder.get_best_tree(score))
+# decoder = Decoder()
+# print(decoder.get_best_tree(score))
