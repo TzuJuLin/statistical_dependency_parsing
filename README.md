@@ -14,4 +14,4 @@ The feature template includes 6 uni-gram features, 7 bi-gram features and 4 surr
 For the English dataset, we derived around 80M features with a runtime of 14 minutes. As for the German dataset, around 40M features were derived within 7 minutes.
 
 ### Data Format
-The code is written to handle conll06 format only.
+The code is written to handle conll06 format.
